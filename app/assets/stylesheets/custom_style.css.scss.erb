@@ -1,32 +1,67 @@
 /* Bootstrap SASS Variables */
 $brand-primary: #f39c12;
+$brand-default: #ffffff;
+$btn-default-color: $brand-default;
+$btn-default-border: $btn-default-color;
 $navbar-inverse-bg: $brand-primary;
 $font-family-base: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-size-base: 18px;
+$font-size-base: 16px;
+
 $headings-font-family: "Leckerli One", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight: 400;
-$text-color: #ffffff;
+$headings-color: #333333;
+$headings-line-height: .9;
+$text-color: #666666;
 $navbar-inverse-link-color: darken($brand-primary, 18%);
 $navbar-inverse-border: transparent;
 $btn-font-weight: 400;
-
+$padding-large-horizontal: 30px;
+$padding-large-vertical: 15px;
 
 
 @import 'bootstrap';
 @import url(http://fonts.googleapis.com/css?family=Coustard:400,900|Leckerli+One);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic);
 
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
 body {
-min-height: 2000px;
 padding-top: 50px;
 }
 
+.fa-6 {
+font-size: 20em;
+}
+
 p, h1, h2, h3, h4, h5, h6 {
-	-webkit-font-smoothing: antialiased;
+-webkit-font-smoothing: antialiased;
+}
+
+.btn {
+text-transform: uppercase;
+margin-right: 5px;
+margin-left: 5px;
+margin-bottom: 10px;
+}
+
+.btn-default {
+background-color: transparent;
+border: 2px solid $btn-default-color;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+color: $brand-primary;
+background-color: $brand-default;
+border-color: $brand-default;
 }
 
 .lead {
 color: $navbar-inverse-link-color
+}
+
+p {
+margin: 0 0 40px;
 }
 
 .content .container {
@@ -38,15 +73,17 @@ width: 100%;
 
 .bg-primary-color {
 background-color: $brand-primary;
-color: #ffffff;
+color: $brand-default;
+}
+
+.bg-secondary-color {
+background-color: $brand-default;
 }
 
 .masthead h1 {
 font-size: 50px;
+color: #ffffff;
 }
-
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
