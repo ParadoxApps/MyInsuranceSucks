@@ -3,7 +3,10 @@ class PagesController < ApplicationController
   def index
   end
 
-  def about
+  def find
+  end
+
+  def start
   end
 
 end

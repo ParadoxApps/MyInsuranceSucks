@@ -24,11 +24,17 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body class="<%= path_class %>">
 
-		<%= render "layouts/header" %>
-
-		<%= yield %>
+		<% if current_page?(root_path) %>
+			<%= render "layouts/header_index"%>
+		<% else %>
+			<%= render "layouts/header"%>
+		<% end %>
+		
+		<div class="content <%= path_class %>">
+			<%= yield %>
+		</div>
 
   </body>
 </html>
