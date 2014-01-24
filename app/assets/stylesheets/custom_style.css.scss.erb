@@ -5,6 +5,7 @@ $brand-primary-darken-subtle: darken($brand-primary, 5%);
 $brand-default: #ffffff;
 $headings-color: #333333;
 $text-color: #666666;
+$navbar-inverse-brand-color: $brand-default;
 $btn-default-color: $brand-default;
 $btn-default-border: $btn-default-color;
 $navbar-inverse-bg: $brand-primary;
@@ -16,7 +17,8 @@ $font-size-h3: floor($font-size-base * 2);
 $font-size-h4: floor($font-size-base * 1.5);
 $font-size-h5: $font-size-base;
 $font-size-h6: ceil($font-size-base * 0.85);
-$headings-font-family: "Leckerli One", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$script-font: "Leckerli One", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight: 400;
 $headings-line-height: .9;
 $navbar-inverse-link-color: #aaaaaa;
@@ -42,8 +44,20 @@ body {
 padding-top: 50px;
 }
 
+#footer {
+background-color: $headings-color;
+}
+
 .fa-6 {
 font-size: 20em;
+}
+
+.fa-3 {
+font-size: 5em;
+}
+
+.no-margin {
+margin: 0;	
 }
 
 a, p, h1, h2, h3, h4, h5, h6 {
@@ -74,6 +88,19 @@ margin-bottom: 22px;
 background: $headings-color;
 }
 
+.navbar-brand {
+font-family: $script-font;
+font-size: 24px;
+}
+
+.content img {
+background: #eeeeee;
+}
+
+.navbar-header .navbar-nav {
+margin: 5px -15px;
+}
+
 .btn {
 text-transform: uppercase;
 margin-right: 10px;
@@ -81,14 +108,39 @@ margin-bottom: 10px;
 }
 
 .btn-default {
+color: $brand-primary-darken;
 background-color: transparent;
-border: 2px solid $btn-default-color;
+border: 2px solid $brand-primary-darken;
 }
 
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
 color: $brand-primary;
+background-color: $brand-primary-darken;
+border: 2px solid $brand-primary-darken;
+}
+
+.btn-default-invert {
+color: $brand-default;
+background-color: transparent;
+border: 2px solid $btn-default-color;
+}
+
+.btn-default-invert:hover, .btn-default-invert:focus, .btn-default-invert:active, .btn-default-invert.active {
+color: $brand-primary;
 background-color: $brand-default;
 border-color: $brand-default;
+}
+
+.btn-primary-invert {
+color: $brand-primary;
+background-color: transparent;
+border: 2px solid $brand-primary!important;
+}
+
+.btn-primary-invert:hover, .btn-primary-invert:focus, .btn-primary-invert:active, .btn-primary-invert.active {
+color: $brand-default;
+background-color: $brand-primary;
+border-color: $brand-primary;
 }
 
 .lead {
@@ -110,7 +162,11 @@ height: 4px;
 
 .navbar-toggle {
 margin-left: 15px;
-padding: 7px 7px;
+padding: 13px 16px 17px 16px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-right: 0px;
+border-radius: 0 !important;
 }
 
 .navbar-text {
@@ -128,10 +184,9 @@ margin: 0 0 40px;
 }
 
 .content .container {
-min-height: 300px;
-padding-top: 50px;
-padding-bottom: 50px;
-border-bottom: 2px solid #eeeeee;
+padding-top: 80px;
+padding-bottom: 80px;
+border-bottom: none;
 }
 
 .container.full-width {
@@ -169,21 +224,37 @@ background-color: transparent;
 font-size: 12px;
 }
 
+.grey-bg {
+background-color: #eeeeee;
+}
+
+.pages-index .masthead h1 {
+font-family: $script-font;
+}
+
 .masthead h1 {
 font-size: 50px;
 color: #ffffff;
+font-family: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin-bottom: 5px;
+margin-top: 5px;
 }
 
 #footer .container p {
 margin: 19px 0;
 }
 
-#footer {
-background-color: $headings-color;
-}
-
 .masthead .container {
 border-bottom: 0;
+}
+
+.mini-masthead .container {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+.mini-masthead .lead {
+margin-bottom: 5px;
 }
 
 #footer .copyright {
@@ -202,12 +273,16 @@ text-align: center;
 	display: inline-block;
 	}
 
+	.pages-index .masthead h1 {
+	font-size: 75px;
+	}
+
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
 
-	.masthead h1 {
+	.pages-index .masthead h1 {
 	font-size: 100px;
 	}
 

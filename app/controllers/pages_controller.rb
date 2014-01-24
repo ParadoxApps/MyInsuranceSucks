@@ -6,7 +6,19 @@ class PagesController < ApplicationController
   def find
   end
 
-  def start
+  def info
+  end
+
+  def testimonials
+  end
+
+  def faq
+  end
+
+  def contact_us
+  end
+
+  def privacy
   end
 
 end
