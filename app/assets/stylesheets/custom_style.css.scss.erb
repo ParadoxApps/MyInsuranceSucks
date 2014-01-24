@@ -1,6 +1,10 @@
 /* Bootstrap SASS Variables */
 $brand-primary: #f39c12;
+$brand-primary-darken: darken($brand-primary, 18%);
+$brand-primary-darken-subtle: darken($brand-primary, 5%);
 $brand-default: #ffffff;
+$headings-color: #333333;
+$text-color: #666666;
 $btn-default-color: $brand-default;
 $btn-default-border: $btn-default-color;
 $navbar-inverse-bg: $brand-primary;
@@ -14,14 +18,17 @@ $font-size-h5: $font-size-base;
 $font-size-h6: ceil($font-size-base * 0.85);
 $headings-font-family: "Leckerli One", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight: 400;
-$headings-color: #333333;
 $headings-line-height: .9;
-$text-color: #666666;
-$navbar-inverse-link-color: darken($brand-primary, 18%);
-$navbar-inverse-border: transparent;
+$navbar-inverse-link-color: #aaaaaa;
+$navbar-inverse-border: $brand-primary-darken-subtle;
 $btn-font-weight: 400;
 $padding-large-horizontal: 30px;
 $padding-large-vertical: 15px;
+$grid-float-breakpoint: 100000px;
+$navbar-inverse-toggle-border-color: transparent;
+$navbar-inverse-toggle-icon-bar-bg: $brand-default;
+$navbar-inverse-toggle-hover-bg: $brand-primary-darken-subtle;
+$dropdown-bg: #000000;
 
 
 @import 'bootstrap';
@@ -39,16 +46,32 @@ padding-top: 50px;
 font-size: 20em;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+a, p, h1, h2, h3, h4, h5, h6 {
 -webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 .icon {
 color: #cccccc;
 }
 
+.masthead .lead {
+color: $brand-primary-darken;
+}
+
+.lead {
+color: $brand-default;
+}
+
 h1, h2, h3 {
 margin-bottom: 22px;
+}
+
+.navbar-collapse {
+background: $headings-color;
 }
 
 .btn {
@@ -72,6 +95,26 @@ border-color: $brand-default;
 color: $navbar-inverse-link-color
 }
 
+.navbar-toggle .icon-bar {
+width: 26px;
+height: 4px;
+}
+
+.navbar-toggle {
+margin-left: 15px;
+padding: 7px 7px;
+}
+
+.navbar-text {
+margin-top: 0;
+margin-bottom: 0;
+}
+
+.navbar-text,
+.navbar-text a {
+color: $brand-primary-darken!important;
+}
+
 p {
 margin: 0 0 40px;
 }
@@ -83,8 +126,8 @@ padding-bottom: 50px;
 border-bottom: 2px solid #eeeeee;
 }
 
-.content .container.full-width {
-width: 100%
+.container.full-width {
+width: 100%;
 }
 
 .bg-primary-color {
@@ -96,13 +139,51 @@ color: $brand-default;
 background-color: $brand-default;
 }
 
+#footer .nav li a {
+color: $navbar-inverse-link-color;
+font-size: 12px;
+}
+
+#footer a {
+color: $navbar-inverse-link-color;
+}
+
+#footer a:hover {
+color: $brand-default;
+}
+
+#footer .nav li a:hover {
+color: $brand-default;
+background-color: transparent;
+}
+
+.copyright {
+font-size: 12px;
+}
+
 .masthead h1 {
 font-size: 50px;
 color: #ffffff;
 }
 
+#footer .container p {
+margin: 19px 0;
+}
+
+#footer {
+background-color: $headings-color;
+}
+
+.masthead .container {
+	border-bottom: 0;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
+
+	#footer .nav > li {
+	display: inline-block;
+	}
 
 }
 
@@ -137,6 +218,15 @@ color: #ffffff;
 /* Small devices only */
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 
+	#footer .nav {
+	float: none!important;
+	text-align: center;
+	}
+
+	#footer .copyright {
+text-align: center;
+}
+
 }
 
 /* Medium devices only */
@@ -148,6 +238,9 @@ color: #ffffff;
 @media (min-width: $screen-lg-min) {
 
 }
+
+
+
 
 
 
