@@ -1,7 +1,13 @@
 MyInsuranceSucks::Application.routes.draw do
 
   root "pages#index"
-  get "about" => "pages#about"
+  get "find" => "pages#find"
+  get "info" => "pages#info"
+  get "testimonials" => "pages#testimonials"
+  get "faq" => "pages#faq"
+  get "contact-us" => "pages#contact_us"
+  get "privacy" => "pages#privacy"
+  get "howitworks" => "pages#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

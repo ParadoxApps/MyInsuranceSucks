@@ -1,6 +1,340 @@
+/* Bootstrap SASS Variables */
+$brand-primary: #f39c12;
+$brand-primary-darken: darken($brand-primary, 18%);
+$brand-primary-darken-subtle: darken($brand-primary, 5%);
+$brand-default: #ffffff;
+$headings-color: #333333;
+$text-color: #666666;
+$navbar-inverse-brand-color: $brand-default;
+$btn-default-color: $brand-default;
+$btn-default-border: $btn-default-color;
+$navbar-inverse-bg: $brand-primary;
+$font-family-base: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-h1: floor($font-size-base * 5);
+$font-size-h2: floor($font-size-base * 3);
+$font-size-h3: floor($font-size-base * 2);
+$font-size-h4: floor($font-size-base * 1.5);
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil($font-size-base * 0.85);
+$headings-font-family: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$script-font: "Leckerli One", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-weight: 400;
+$headings-line-height: .9;
+$navbar-inverse-link-color: #aaaaaa;
+$navbar-inverse-border: $brand-primary-darken-subtle;
+$btn-font-weight: 400;
+$padding-large-horizontal: 30px;
+$padding-large-vertical: 15px;
+$grid-float-breakpoint: 100000px;
+$navbar-inverse-toggle-border-color: transparent;
+$navbar-inverse-toggle-icon-bar-bg: $brand-default;
+$navbar-inverse-toggle-hover-bg: $brand-primary-darken-subtle;
+$dropdown-bg: #000000;
+
+
 @import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Coustard:400,900|Leckerli+One);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic);
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
 body {
-  min-height: 2000px;
-  padding-top: 70px;
+padding-top: 50px;
+}
+
+#footer {
+background-color: $headings-color;
+}
+
+.fa-6 {
+font-size: 20em;
+}
+
+.fa-3 {
+font-size: 5em;
+}
+
+.no-margin {
+margin: 0;	
+}
+
+a, p, h1, h2, h3, h4, h5, h6 {
+-webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.icon {
+color: #cccccc;
+}
+
+.masthead .lead {
+color: $brand-primary-darken;
+}
+
+.lead {
+color: $brand-default;
+}
+
+h1, h2, h3 {
+margin-bottom: 22px;
+}
+
+.navbar-collapse {
+background: $headings-color;
+}
+
+.navbar-brand {
+font-family: $script-font;
+font-size: 24px;
+}
+
+.content img {
+background: #eeeeee;
+}
+
+.navbar-header .navbar-nav {
+margin: 5px -15px;
+}
+
+.btn {
+text-transform: uppercase;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.btn-default {
+color: $brand-primary-darken;
+background-color: transparent;
+border: 2px solid $brand-primary-darken;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+color: $brand-primary;
+background-color: $brand-primary-darken;
+border: 2px solid $brand-primary-darken;
+}
+
+.btn-default-invert {
+color: $brand-default;
+background-color: transparent;
+border: 2px solid $btn-default-color;
+}
+
+.btn-default-invert:hover, .btn-default-invert:focus, .btn-default-invert:active, .btn-default-invert.active {
+color: $brand-primary;
+background-color: $brand-default;
+border-color: $brand-default;
+}
+
+.btn-primary-invert {
+color: $brand-primary;
+background-color: transparent;
+border: 2px solid $brand-primary!important;
+}
+
+.btn-primary-invert:hover, .btn-primary-invert:focus, .btn-primary-invert:active, .btn-primary-invert.active {
+color: $brand-default;
+background-color: $brand-primary;
+border-color: $brand-primary;
+}
+
+.lead {
+color: $navbar-inverse-link-color
+}
+
+.navbar-collapse .navbar-nav > li > a:hover {
+background-color: #222222;
+}
+
+.navbar-collapse .navbar-nav {
+margin: 0px -15px;
+}
+
+.navbar-toggle .icon-bar {
+width: 26px;
+height: 4px;
+}
+
+.navbar-toggle {
+margin-left: 15px;
+padding: 13px 16px 17px 16px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-right: 0px;
+border-radius: 0 !important;
+}
+
+.navbar-text {
+margin-top: 0;
+margin-bottom: 0;
+}
+
+.navbar-text,
+.navbar-text a {
+color: $brand-primary-darken!important;
+}
+
+p {
+margin: 0 0 40px;
+}
+
+.content .container {
+padding-top: 80px;
+padding-bottom: 80px;
+border-bottom: none;
+}
+
+.container.full-width {
+width: 100%;
+}
+
+.bg-primary-color {
+background-color: $brand-primary;
+color: $brand-default;
+}
+
+.bg-secondary-color {
+background-color: $brand-default;
+}
+
+#footer .nav li a {
+color: $navbar-inverse-link-color;
+font-size: 12px;
+}
+
+#footer a {
+color: $navbar-inverse-link-color;
+}
+
+#footer a:hover {
+color: $brand-default;
+}
+
+#footer .nav li a:hover {
+color: $brand-default;
+background-color: transparent;
+}
+
+.copyright {
+font-size: 12px;
+}
+
+.grey-bg {
+background-color: #eeeeee;
+}
+
+.pages-index .masthead h1 {
+font-family: $script-font;
+}
+
+.masthead h1 {
+font-size: 50px;
+color: #ffffff;
+font-family: "Coustard", Georgia, serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin-bottom: 5px;
+margin-top: 5px;
+}
+
+#footer .container p {
+margin: 19px 0;
+}
+
+.masthead .container {
+border-bottom: 0;
+}
+
+.mini-masthead .container {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+.mini-masthead .lead {
+margin-bottom: 5px;
+}
+
+#footer .copyright {
+text-align: center;
+}
+
+#footer .nav {
+float: none!important;
+text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+
+	#footer .nav > li {
+	display: inline-block;
+	}
+
+	.pages-index .masthead h1 {
+	font-size: 75px;
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+
+	.pages-index .masthead h1 {
+	font-size: 100px;
+	}
+
+	.container.masthead {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	}
+
+	#footer .nav {
+	float: right!important;
+	}
+
+	#footer .clearfix {
+	display: none;
+	}
+
+	.hidden-sm {
+	display: inline !important;
+	}
+
+	#footer .copyright {
+	text-align: inherit;
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+
+
+
+/* Unique media queries from here on */ 
+
+/* Extra small devices only */
+@media (max-width: $screen-xs-max) {
+
+}
+
+/* Small devices only */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
+
+}
+
+/* Medium devices only */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+}
+
+/* Large devices only */
+@media (min-width: $screen-lg-min) {
+
 }

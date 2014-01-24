@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> 
 
-    <title>MyInsuranceSucks</title>
+    <title>My Insurance Sucks – Co-op Health Care</title>
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -24,11 +24,18 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body class="<%= path_class %>">
+		<% if current_page?(root_path) %>
+			<%= render "layouts/header_index"%>
+		<% else %>
+			<%= render "layouts/header"%>
+		<% end %>
+		
+		<div class="content <%= path_class %>">
+			<%= yield %>
+		</div>
 
-		<%= render "layouts/header" %>
-
-		<%= yield %>
+    <%= render "layouts/footer"%>
 
   </body>
 </html>
